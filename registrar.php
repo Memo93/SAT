@@ -9,7 +9,8 @@ if ($mysqli->connect_errno){
 $name= $_GET['username'];
 $password = $_GET['password'];
 
-$sql= ($mysqli->query("INSERT INTO user (name,password) VALUES ('$name','$password')"));
-$mysqli->close();
+$sql= $mysqli->query("INSERT INTO user (name,password) VALUES ('$name','$password')");
+printf("New user id is %d./n",$mysqli->insert_id);
+
 
 
