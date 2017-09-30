@@ -24,10 +24,16 @@
     ?>
 </h1>
 
-<form action="registrar.php" method="get">
+<form action="access.php" method="get">
     <h2>
-    <label>User Name</label><br>
-    <input type="text"  placeholder="User Name" name="username"/><br>
+    <label>Name</label><br>
+    <input type="text"  placeholder="Name" name="name"/><br>
+    <br><label>Full Name</label><br>
+    <input type="text"  placeholder="Full Name" name="fullname"/><br>
+    <br><label>Email</label><br>
+    <input type="text"  placeholder="Email" name="email"/><br>
+    <br><label>User Name</label><br>
+    <input type="text" placeholder="User Name" name="username"><br>
     <br><label>Password</label><br>
     <input type="password" placeholder="Password" name="password"><br>
     <br><input type="submit" value="Submite"/>
