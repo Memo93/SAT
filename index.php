@@ -7,6 +7,8 @@
             overflow: hidden;
             background-color: black;
             font-family: "Times New Roman";
+            border: double;
+            border-color: #f9f9f9;
         }
         .container a {
             float: left;
@@ -31,7 +33,8 @@
         }
 
         .container a:hover, .dropdown:hover .dropbtn {
-            background-color: red;
+            background-color: darkmagenta;
+            border: inset;
         }
 
         .dropdown-content {
@@ -59,7 +62,9 @@
         .show {
             display: block;
         }
+
     </style>
+    <!--<img src="image/cargador.png" alt="" id="bg">-->
 </head>
 
 <div class="container">
