@@ -37,7 +37,7 @@ text-align: center;
 echo "New User";
 ?>
 </h1>
-<h2>
+<h2><!-- Create the form for insert information -->
 <form method="post" action="">
 <label>Name</label><br>
 <input type="text"  placeholder="Name" name="name"/><br>
@@ -53,13 +53,17 @@ echo "New User";
 </h2>
 </form>
 <?php
+//decision to know if the button is empty
     if(!empty($_POST['btncreateuser'])){
+
         echo "Welcome";
     }
     /*if (empty($name) and empty($fullname) and empty($email) and empty($user_name) and empty($password)) {
         echo "bien";
     }*/
-elseif (!empty($name) and !empty($fullname) and !empty($email) and !empty($user_name) and !empty($password)) {
+    //to know if the form is empty
+
+    elseif (!empty($name) and !empty($fullname) and !empty($email) and !empty($user_name) and !empty($password)) {
     $sql = $mysqli->query("INSERT INTO user (name,full_name,email,user_name,password) VALUES ('name','fullname','email','user_name', 'password')");
     printf("New user id is %d.", $mysqli->insert_id);
 }
