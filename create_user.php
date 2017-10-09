@@ -1,7 +1,18 @@
-<html xmlns="http://www.w3.org/1999/html">
+<?php
+$mysqli= new mysqli("localhost","memo","HoffvjNzPBsQ4TZX","sat");
 
-<title>Menú</title>
+//chech connection
+if ($mysqli->connect_errno){
+    die("Connect failed: ".$mysqli->connect_error);
+}?>
+
+<?php
+/*if(empty($_POST)){*/?>
+<!DOCTYPE html>
+<html>
+<title>New User</title>
 <body bgcolor=white ></body>
+
 <style>
 h1{
 color:dodgerblue;
@@ -26,10 +37,8 @@ text-align: center;
 echo "New User";
 ?>
 </h1>
-
-
 <h2>
-<form method="post" action=""><!--create_user.php-->
+<form method="post" action="">
 <label>Name</label><br>
 <input type="text"  placeholder="Name" name="name"/><br>
 <br><label>Full Name</label><br>
@@ -40,28 +49,34 @@ echo "New User";
 <input type="text" placeholder="User Name" name="username"><br>
 <br><label>Password</label><br>
 <input type="password" placeholder="Password" name="password"><br>
-<br><input type="submit"  value="Create User" name="btncreateuser"/>
+<br><input type="submit" value="Create User" name="btncreateuser" />
 </h2>
 </form>
+<?php
+    if(!empty($_POST['btncreateuser'])){
+        echo "Welcome";
+    }
+    /*if (empty($name) and empty($fullname) and empty($email) and empty($user_name) and empty($password)) {
+        echo "bien";
+    }*/
+elseif (!empty($name) and !empty($fullname) and !empty($email) and !empty($user_name) and !empty($password)) {
+    $sql = $mysqli->query("INSERT INTO user (name,full_name,email,user_name,password) VALUES ('name','fullname','email','user_name', 'password')");
+    printf("New user id is %d.", $mysqli->insert_id);
+}
+?>
 </html>
 
-<?php
-$mysqli= new mysqli("localhost","memo","HoffvjNzPBsQ4TZX","sat");
-//chech connection
-
-if ($mysqli->connect_errno){
-    die("Connect failed: ".$mysqli->connect_error);
-}
-
-
-if (isset($_POST['btncreateuser'])) {
-echo"boton click";
+<!--/*if(isset($_POST["btncreateuser"])){
+    echo"lo apreto";
 } elseif (empty($name) and empty($fullname) and empty($email) and empty($user_name) and empty($password)) {
-        trigger_error("It's necessary to insert the name, the full name, the email, the user name and the password");
-    }else {
+        echo "vacidos";
+    } if (isset($_POST["btncreateuser"])) {
+    echo "good";
         $sql = $mysqli->query("INSERT INTO user (name,full_name,email,user_name,password) VALUES ('name','fullname','email','user_name', 'password')");
         printf("New user id is %d.", $mysqli->insert_id);
-    }
+    }*/
+
+
 
 
 
