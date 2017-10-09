@@ -54,7 +54,7 @@ echo "New User";
 </form>
 <?php
 //decision to know if the button is empty
-    if(!empty($_POST['btncreateuser'])){
+    if(!empty($_POST)){
 
         echo "Welcome";
     }
