@@ -69,7 +69,7 @@
 
 <div class="container">
     <a href="index.php">Home</a>
-    <a href="create_user.php">Create User</a>
+    <a href="user_form.php">Create User</a>
     <div class="dropdown">
         <button class="dropbtn" onclick="myFunction()">Crete new user</button>
         <div class="dropdown-content" id="create_new_user">
