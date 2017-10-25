@@ -1,4 +1,7 @@
 <html lang="en">
+<style>
+
+</style>
 <head>
 
     <link rel="stylesheet" href="style.php" media="screen">
@@ -12,17 +15,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
-    <title>Sistema de Administración de Se Mamo</title>
+    <title>Sistema de Administración de Tajos</title>
 </head>
 <body>
-    <div class="container">
-        <div class="container-body">
-        <h1>Insert a New User</h1>
-        <p class="lead">
-            In this part of the form you create a new user for use the SAT (Blade Management System).
-        </p>
-        </div>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="index.php"> SAT</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="true" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="navbarsExampleDefault" style>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="user_form.php">
+                    Create User
+                    <span class="sr-only">(Current)</span>
+                </a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
     </div>
+</nav>
+<fieldset>
+    <main role="main" class="container">
+       <br><br><div class="container-body">
+            <div class="row justify-content-md-center">
+                <div class="col-md-auto">
+                    <h1>Insert a New User</h1>
+                </div>
+            </div>
+        </div>
+    </main>
+</fieldset>
 <?php
 if ($_SERVER["REQUEST_METHOD"]=='POST'){
     $name=$_POST['name'];
@@ -48,18 +76,36 @@ if ($_SERVER["REQUEST_METHOD"]=='POST'){
 ?>
 
 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
-    <div class="container">
-    <h5>Name:</h5>
-    <input type="text" placeholder="Name"name="name"/><br>
-    <br><h5>Full Name:</h5>
-    <input type="text" placeholder="Full Name" name="fullname"/><br>
-    <br><h5>Email:</h5>
-    <input type="text" placeholder="Email"name="email"/><br>
-    <br><h5>User Name:</h5>
-    <input type="text" placeholder="User Name"name="username"/><br>
-    <br><h5>Password:</h5>
-    <input type="password" placeholder="Password" name="password"/><br>
+    <div class="container body">
+        <div class="row justify-content-md-center">
+    <div class="col-md-auto">
+        <h5>Name:</h5>
+        <input type="text" placeholder="Name"name="name" required/><br>
+    </div>
+            <div class="w-100"></div>
+     <div class="col-md-auto">
+        <br><h5>Full Name:</h5>
+        <input type="text" placeholder="Full Name" name="fullname" required/><br>
+     </div>
+            <div class="w-100"></div>
+     <div class="col-md-auto">
+         <br><h5>Email:</h5>
+        <input type="text" placeholder="Email"name="email" required/><br>
+     </div>
+            <div class="w-100"></div>
+    <div class="col-md-auto">
+        <br><h5>User Name:</h5>
+        <input type="text" placeholder="User Name"name="username" required/><br>
+    </div>
+            <div class="w-100"></div>
+    <div class="col-md-auto">
+        <br><h5>Password:</h5>
+        <input type="password" placeholder="Password" name="password" required/><br>
+    </div>
+            <div class="w-100"></div>
     <br><button type="submit" class="btn btn-primary">Crete User</button>
+    </div>
+
     </div>
 </form>
 </body>
