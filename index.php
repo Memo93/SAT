@@ -14,7 +14,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="index.php"> SAT</a>
+        <a class="navbar-brand" href="#"> SAT</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="true" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -22,13 +22,10 @@
         <div class="navbar-collapse collapse" id="navbarsExampleDefault" style>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="user_form.php">
-                        Create User
+                    <a class="nav-link" href="login.php">
+                        Login
                         <span class="sr-only">(Current)</span>
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
