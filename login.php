@@ -44,21 +44,30 @@
     </main>
 </fieldset>
 <?php
+$mysqli = new mysqli("localhost", "memo", "Jh7MihgxllG8bWS2", "sat");
 if ($_SERVER["REQUEST_METHOD"]=='POST'){
-    $username=$_POST['user_name'];
-    $pass=$_POST['password'];
+    $username= ($_POST['user_name']);
+    $pass=($_POST['password']);
 
-    if (!empty($username) and !empty($password)) {
+    if (!empty($username) and !empty($pass)) {
 
-        $mysqli = new mysqli("localhost", "memo", "HoffvjNzPBsQ4TZX", "sat");
+        $query = "SELECT * FROM user WHERE (user_name ='$username' and password ='$pass')";
+        $row= $mysqli->query("SELECT  COUNT(*) FROM user");
 
-        $query = "SELECT * FROM user WHERE ('$name','$fullname','$email','$username','$pass')";
+//        if($row==1){
+//        if(!empty($row['user_name']) and !empty($row['password'])){
 
-        $mysqli->query($query);
-        printf("New user id is %d.", $mysqli->insert_id);
+            if ($_SESSION['user_name'] = $query and $_SESSION['password'] = $query){
+//                header("location: user_form.php");
+                echo "bien";
+            } else {
+                echo"error";
+            }
+
+//        $mysqli->query($query);
     } else {
 
-        printf("Incomplete Form");
+        printf("Your Login Name or Password is invalid");
     }
 
 }
@@ -74,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"]=='POST'){
             <div class="w-100"></div>
             <div class="col-md-auto">
                 <br><h5>Password:</h5>
-                <input type="text" placeholder="Password" name="password" required/><br>
+                <input type="password" placeholder="Password" name="password" required/><br>
             </div>
             <div class="w-100"></div>
             <br><button type="submit" class="btn btn-primary">Login</button>
