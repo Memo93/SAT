@@ -54,16 +54,16 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"]=='POST'){
     $name=$_POST['name'];
-    $fullname=$_POST['fullname'];
+    $full_name=$_POST['full_name'];
     $email=$_POST['email'];
     $username=$_POST['username'];
     $pass=$_POST['password'];
 
-    if (!empty($name) and !empty($fullname) and !empty($email) and !empty($user_name) and !empty($password)) {
+    if (!empty($name) and !empty($full_name) and !empty($email) and !empty($username) and !empty($pass)) {
 
-        $mysqli = new mysqli("localhost", "memo", "HoffvjNzPBsQ4TZX", "sat");
+        $mysqli = new mysqli("localhost", "memo", "Jh7MihgxllG8bWS2", "sat");
 
-        $query = "INSERT INTO user (name, full_name, email, user_name, password) VALUES ('$name','$fullname','$email','$username','$pass')";
+        $query = "INSERT INTO user (name, full_name, email, user_name, password) VALUES ('$name','$full_name','$email','$username','$pass')";
 
         $mysqli->query($query);
         printf("New user id is %d.", $mysqli->insert_id);
@@ -80,30 +80,30 @@ if ($_SERVER["REQUEST_METHOD"]=='POST'){
         <div class="row justify-content-md-center">
     <div class="col-md-auto">
         <h5>Name:</h5>
-        <input type="text" placeholder="Name"name="name" required/><br>
+        <input type="text" placeholder="Name"name="name"/><br>
     </div>
             <div class="w-100"></div>
      <div class="col-md-auto">
         <br><h5>Full Name:</h5>
-        <input type="text" placeholder="Full Name" name="fullname" required/><br>
+        <input type="text" placeholder="Full Name" name="full_name"/><br>
      </div>
             <div class="w-100"></div>
      <div class="col-md-auto">
          <br><h5>Email:</h5>
-        <input type="text" placeholder="Email"name="email" required/><br>
+        <input type="text" placeholder="Email"name="email"/><br>
      </div>
             <div class="w-100"></div>
     <div class="col-md-auto">
         <br><h5>User Name:</h5>
-        <input type="text" placeholder="User Name"name="username" required/><br>
+        <input type="text" placeholder="User Name"name="username"/><br>
     </div>
             <div class="w-100"></div>
     <div class="col-md-auto">
         <br><h5>Password:</h5>
-        <input type="password" placeholder="Password" name="password" required/><br>
+        <input type="password" placeholder="Password" name="password"/><br>
     </div>
             <div class="w-100"></div>
-    <br><button type="submit" class="btn btn-primary">Crete User</button>
+    <br><button type="submit" class="btn btn-primary">Create User</button>
     </div>
 
     </div>
